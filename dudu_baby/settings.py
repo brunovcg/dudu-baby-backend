@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4ptrn+lc-$kn+wl07y)z1f))w1^pf)cybkb49l1(+!r-(64cw6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework.authtoken',
+    'rest_framework',
+    'corsheaders',
+    'products',
+    'categories',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -80,6 +86,8 @@ DATABASES = {
     }
 }
 
+CORS_ALLOW_ALL_ORIGINS=True
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -121,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.User'
