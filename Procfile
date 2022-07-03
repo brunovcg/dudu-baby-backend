@@ -1,0 +1,1 @@
+web: gunicorn dudu_baby.wsgi
