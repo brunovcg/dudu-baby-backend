@@ -28,6 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
+CORS_ORIGIN_ALLOW_ALL = False
+
+CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:3000",
+    "https://baby-dudu.vercel.app/"
+
+]
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+   'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

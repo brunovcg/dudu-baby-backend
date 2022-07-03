@@ -5,11 +5,10 @@ from categories.serializers import CategoriesSerializer
 
 class ProductsSerializer(serializers.ModelSerializer):
 
-  category = CategoriesSerializer
+  category = CategoriesSerializer()
 
   class Meta:
     model = Products
     fields = ["id","name", "status", "link", "img","price", "message", "person", "category"]
 
 
-  
